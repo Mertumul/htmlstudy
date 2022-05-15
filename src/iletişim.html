@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>İletişim Sayfası</title>
+    <link rel="stylesheet" href="../css/iletişim.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="bform">
+        <h1>İLETİŞİM</h1>
+    </div>
+    <div class="main">
+    <form name="myForm" onsubmit="return validateForm()" action="iletişim.php" method="POST">
+        
+        <h2 class="name"> Adınız:</h2>  
+        <input class="adı" type="text" name="adı" placeholder="Adınızı Giriniz" >
+        <h2 class="name"> Soyadınız:</h2>
+        <input class="soyadı" type="text" name="soyadı" placeholder="Soyadınızı Giriniz">
+        
+        <h2 class="name">Cinsiyet:</h2>
+        <input type="radio" class="cinsiyet" name="cinsiyet" value="Erkek">
+        <label class="cs" for="cinsiyet">Erkek</label>
+        <input type="radio" class="cinsiyet" name="cinsiyet" value="Kadın">
+        <label class="cs" for="cinsiyet">Kadın</label>
+
+        
+
+        <h2 class="name_özel">Bize Nereden Ulaştınız:</h2>
+        <input type="checkbox" class="sm" name="sm1" value="Instagram">
+        <label class="cs" for="sm1">İnstagram</label>
+        <input type="checkbox" class="sm" name="sm2" value="Kariyer.net">
+        <label class="cs" for="sm2">Kariyer.net</label>
+        <input type="checkbox" class="sm" name="sm3" value="Facebook">
+        <label class="cs" for="sm3">Facebook</label>
+        <input type="checkbox" class="sm" name="sm4" value="Linkedn">
+        <label class="cs" for="sm4">Linkedn</label>
+
+        <h2 class="name">E-mail</h2>
+        <input class="email" type="email" name="email" placeholder="E-mailnizi Giriniz">
+
+        <h2 class="name">Üniversiteniz</h2>
+        <input class="okul" type="text" name="okul" value="Sakarya Üniversitesi" readonly>
+
+        <h2 class="name">Öğrenci Numarası</h2>
+        <input class="öğrencino" type="text" name="öğrencino" placeholder="Öğrenci numaranızı Giriniz" autocomplete="on">
+
+        <h2 class="name">Telefon Numarası</h2>
+        <input class="telno" type="text" name="telno" placeholder="Telefon Numaranızı Giriniz">
+
+        <h2 class="name">Konu</h2>
+        <textarea class="konu" name="konu" rows="10" cols="30"  placeholder="Konuyu yazın"></textarea>
+        <br>
+        <br>
+        <input class="button" type="submit" value="GÖNDER"></input>
+        <input class="button" type="reset" value="TEMİZLE"></input>
+
+    </form>
+</div>
+</body>
+<footer class="footer-basic">
+    <div class="social">
+        <a href="https://www.instagram.com/mert_umul48/" target="_blank"><i class="fa fa-instagram"></i></a> 
+        <a href=" https://github.com/Mertumul" target="_blank"><i class="fa fa-github"></i></a>
+    </div>
+   
+    <p class="copyright">Mert Umul © 2022</p>
+</footer>
+<script>
+	function validateForm() {
+		var adı = document.forms["myForm"]["adı"].value;
+		var soyadı = document.forms["myForm"]["soyadı"].value;
+		var email = document.forms["myForm"]["email"].value;
+		var öğrencino = document.forms["myForm"]["öğrencino"].value;
+		var cinsiyet = document.forms["myForm"]["cinsiyet"].value;
+    var telno =document.forms["myForm"]["telno"].value;
+	
+		var atpos = email.indexOf("@");
+		var dotpos = email.lastIndexOf(".");
+		if (adı == null || adı == "", soyadı == null || soyadı == "", email == null || email == "", cinsiyet == null || cinsiyet == "",öğrencino == null || öğrencino == "",telno ==null || telno == "") {
+			alert("Tüm alanlar dolu olmalıdır!");
+			return false;
+		} else if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
+			alert("Lütfen geçerli bir mail adresi girin...");
+			return false;
+		} else {
+			return true;
+		}
+	}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>

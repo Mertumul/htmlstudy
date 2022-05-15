@@ -1,0 +1,73 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: #5e7188 url(https://media.istockphoto.com/photos/oludeniz-picture-id649666134?b=1&k=20&m=649666134&s=170667a&w=0&h=7IlOkuOwHrEOLZ4JP1oGv7eejID-OqQNlsM-s0igLks=);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+form
+{
+    background: #11111198;
+    padding: 25px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    width: 250px;
+
+}
+form h2
+{
+    margin-top: 15px;
+    color: aliceblue;
+    font-size: 30px;
+    margin-bottom: 30px;
+    
+}
+form input
+{
+    border: none;
+    background: none;
+    text-align: center;
+    outline: none;
+    padding: 10px;
+    margin: 20px;
+    color: white;
+    height: 20px;
+    width: 65%;
+    border-radius: 30px;
+    transition: 0.5s ease-in;
+
+}
+form input[type="text"],form input[type="password"]{
+
+    border: solid 2px #dcdde1;
+}
+form input[type="submit"]{
+    border: solid 2px #c8d6e5;
+    box-sizing: border-box;
+    height: 50px;
+    width: 40%;
+    cursor: pointer;
+  
+}
+form input[type="text"]:focus,form input[type="password"]:focus{
+    width: 80%;
+    border: solid 2px #c8d6e5;
+
+
+}
+form input[type="submit"]:hover{
+
+background: #c8d6e5;
+color: #0a3d62;
+  
+}
